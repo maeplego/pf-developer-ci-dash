@@ -1,0 +1,13 @@
+services:
+  ci-dash:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    environment:
+      CI_DASH_HTTP_ADDR: ${CI_DASH_HTTP_ADDR:-:8115}
+      CI_DASH_REPOS: ${CI_DASH_REPOS:-oasdiff/oasdiff}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:-}
+      GITHUB_API_BASE: ${GITHUB_API_BASE:-https://api.github.com}
+    ports:
+      - "${CI_DASH_HOST_PORT:-8115}:8115"

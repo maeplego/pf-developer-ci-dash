@@ -1,0 +1,23 @@
+# Binaries
+/bin/
+/dist/
+/ci-dash
+/ci-dash.exe
+*.exe
+*.test
+*.out
+coverage.out
+vendor/
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+chat-context/
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
