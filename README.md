@@ -1,30 +1,18 @@
 # pf-developer-ci-dash
 
-P11 CI pipeline dashboard (idea 15). **Read-only** view of GitHub Actions on **allowlisted public repositories**. No PAT in git. Scanner is not this repo and is not on the K8s overlay.
-
-Learning / portfolio sample. Formal docs: `project/portfolio-plan/developer-platform/docs/`.
-
-## Demo
+学習用の CI ダッシュボードです。許可した **公開** GitHub リポジトリの Actions を読むだけです。PAT を Git に置きません。**本番のパイプライン基盤ではありません。**
 
 ```powershell
 go test ./...
 $env:CI_DASH_REPOS = "oasdiff/oasdiff"
 go run ./cmd/ci-dash
-# http://localhost:8115
-# http://localhost:8115/repos/oasdiff/oasdiff
 ```
 
-Optional `GITHUB_TOKEN` (read-only Actions) only raises the unauthenticated rate limit. Keep it in the environment, never in the repo.
+- 一覧: http://localhost:8115
+- 例: http://localhost:8115/repos/oasdiff/oasdiff
 
-Optional webhook (HMAC): set `GITHUB_WEBHOOK_SECRET` and point GitHub at `POST /webhook/github` for `workflow_run`. Unsigned webhooks are 404.
+任意の `GITHUB_TOKEN`（読み取り専用）は、未認証のレート制限を上げるためだけです。環境変数に置き、リポジトリには入れないでください。
 
-## Compose
+Webhook（HMAC）を使うときは `GITHUB_WEBHOOK_SECRET` を設定し、GitHub から `POST /webhook/github`（`workflow_run`）を向けます。署名無しは 404 です。
 
-```powershell
-copy deploy\.env.example deploy\.env
-docker compose -f deploy\compose.yaml --env-file deploy\.env up --build
-```
-
-## Not in this slice
-
-Private repos, PAT committed to git, self-hosted runner execution, flake charts, PostgreSQL history, K8s overlay.
+プライベートリポジトリ、セルフホスト runner の実行、履歴用 Postgres はありません。Compose は `deploy/` です。
