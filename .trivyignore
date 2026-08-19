@@ -1,0 +1,4 @@
+# Next 15 bundles postcss/sharp. Fixes are in Next 16 (breaking). Same IDs as npm-audit-allowlist.
+CVE-2026-45623
+CVE-2026-73646
+GHSA-f88m-g3jw-g9cj
