@@ -258,14 +258,27 @@ func pageHead(title string) string {
 	buf.WriteString(`<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>`)
 	buf.WriteString(html.EscapeString(title))
 	buf.WriteString(` · pf-developer-ci-dash</title><style>
-body{margin:0;font:15px/1.5 ui-sans-serif,system-ui,sans-serif;background:#0e1116;color:#e7ecf3}
-main{padding:1.5rem 2rem;max-width:1100px}
-a{color:#7dd3c7} .muted{color:#93a0b4} .err{color:#ff7b72}
-table{border-collapse:collapse;width:100%}
-td,th{border-bottom:1px solid #2b3340;padding:.4rem .5rem;text-align:left}
-.success{color:#3dd68c;font-weight:700} .failure,.timed_out{color:#ff7b72;font-weight:700}
-input{background:#161b22;color:#e7ecf3;border:1px solid #2b3340;padding:.3rem .5rem;border-radius:8px}
-button{background:#212833;color:#e7ecf3;border:1px solid #2b3340;padding:.3rem .7rem;border-radius:8px}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+:root{color-scheme:light dark;--font:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--bg:#f4f6fb;--bg-accent:radial-gradient(1200px 600px at 10% -10%,rgba(99,102,241,.12),transparent 55%),radial-gradient(900px 500px at 90% 0%,rgba(14,165,233,.1),transparent 50%),var(--bg);--surface:#fff;--border:rgba(15,23,42,.08);--text:#0f172a;--muted:#64748b;--accent:#4f46e5;--accent-hover:#4338ca;--accent-soft:rgba(79,70,229,.12);--success:#059669;--danger:#dc2626;--radius:14px;--radius-sm:10px;--shadow-sm:0 4px 16px rgba(15,23,42,.06);--max:1100px}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1020;--bg-accent:radial-gradient(1200px 600px at 10% -10%,rgba(99,102,241,.18),transparent 55%),radial-gradient(900px 500px at 90% 0%,rgba(14,165,233,.12),transparent 50%),var(--bg);--surface:#111827;--border:rgba(148,163,184,.14);--text:#e2e8f0;--muted:#94a3b8;--accent:#818cf8;--accent-hover:#a5b4fc;--accent-soft:rgba(129,140,248,.16);--shadow-sm:0 6px 20px rgba(0,0,0,.25)}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100vh;font:15px/1.55 var(--font);background:var(--bg-accent);color:var(--text);-webkit-font-smoothing:antialiased}
+main{max-width:var(--max);margin:0 auto;padding:1.5rem 1.25rem 3rem}
+h1{margin:0 0 .35rem;font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.03em}
+h2{margin:1.5rem 0 .75rem;font-size:1.1rem;letter-spacing:-.02em}
+a{color:var(--accent);text-decoration:none;transition:color .15s ease}a:hover{color:var(--accent-hover)}
+.muted{color:var(--muted);max-width:52ch;line-height:1.55}.err{color:var(--danger)}
+form{display:flex;flex-wrap:wrap;gap:.75rem;align-items:end;margin:1.25rem 0;padding:1rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+label{display:flex;flex-direction:column;gap:.35rem;font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;margin-top:.5rem}
+td,th{border-bottom:1px solid var(--border);padding:.65rem .75rem;text-align:left}
+th{color:var(--muted);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;background:var(--accent-soft)}
+.success{color:var(--success);font-weight:700}.failure,.timed_out{color:var(--danger);font-weight:700}
+input{padding:.6rem .75rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font:inherit}
+button{display:inline-flex;align-items:center;justify-content:center;padding:.55rem 1rem;border:none;border-radius:999px;background:linear-gradient(135deg,var(--accent),#6366f1);color:#fff;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(79,70,229,.28);transition:transform .15s ease,box-shadow .15s ease}
+button:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(79,70,229,.34)}
+ul{padding-left:1.2rem}li{margin:.35rem 0}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;padding:.12rem .35rem;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
 </style></head><body>`)
 	return buf.String()
 }
