@@ -15,7 +15,7 @@ go run ./cmd/ci-dash
 
 Webhook（HMAC）を使うときは `GITHUB_WEBHOOK_SECRET` を設定し、GitHub から `POST /webhook/github`（`workflow_run`）を向けます。署名無しは 404 です。
 
-プライベートリポジトリ、セルフホスト runner の実行、履歴用 Postgres はありません。Compose は `deploy/` です。
+プライベートリポジトリ、セルフホスト runner の実行、履歴用 Postgres はありません。Compose は `deploy/` です。**Kubernetes には載せません**（portal のみ overlay）。
 
 ## ライセンスと利用条件
 
