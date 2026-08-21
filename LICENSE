@@ -1,0 +1,40 @@
+Portfolio Evaluation License
+
+Copyright (c) 2026 maeplego
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to use, copy,
+modify, and run the Software solely for the following non-production purposes:
+
+  (a) personal learning and portfolio review;
+  (b) internal evaluation, proof-of-concept, or demonstration;
+  (c) non-commercial research and education;
+
+subject to the following conditions:
+
+1. Production use is not permitted under this license. "Production use" includes
+   (without limitation) processing real customer or employee data, charging fees
+   for access to the Software or a hosted service built from it, or operating the
+   Software as part of a paid product or service offering.
+
+2. Commercial licensing, redistribution for a fee, white-labeling, or offering
+   managed hosting of the Software requires a separate written agreement with the
+   copyright holder.
+
+3. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+4. Third-party components bundled or depended upon by the Software remain under
+   their own licenses. This license does not relicense those components.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+For commercial terms, contact the repository owner (GitHub: maeplego).
+Policy overview (Japanese): see portfolio-plan/licensing.md in
+https://github.com/maeplego/portfolio-plan
